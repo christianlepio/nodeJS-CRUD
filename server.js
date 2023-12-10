@@ -52,8 +52,9 @@ app.use('/refresh', require('./routes/refresh'))
 app.use('/logout', require('./routes/logout'))
 
 app.use(verifyJWT)
-//verify jwt token first before accessing employees routes/api
+//verify jwt token first before accessing employees or users routes/api
 app.use('/employees', require('./routes/api/employees'))
+app.use('/users', require('./routes/api/users'))
 
 //404 page not found!
 app.all('*', (req, res) => {

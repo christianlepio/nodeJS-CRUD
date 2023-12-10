@@ -29,7 +29,7 @@ const handleLogin = async (req, res) => {
                         }
                     }, //pass username and roles here, don't pass the value of password
                     process.env.ACCESS_TOKEN_SECRET, //evironment variable
-                    { expiresIn: '30s' } //limit of time of access
+                    { expiresIn: '10s' } //limit of time of access
                 )
                 
                 const refreshToken = jwt.sign(
